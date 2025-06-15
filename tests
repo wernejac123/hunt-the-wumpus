@@ -1,0 +1,17 @@
+03/21/25
+	memory test:
+		valgrind --tool=memcheck -s ./wumpus
+
+06/15/25
+	1. compile *.sh
+	2. file wumpus (stripped?)
+	3. gamelogic:
+		instructions (y, n, invalid)
+		shoot/move (s, m, invalid) 
+		shoot wumpus
+		bump wumpus (wake him)
+		wumpus got you
+		fall in pits (pit1, pit2)
+		bats (bat1, bat2)
+		move (valid/invalid)
+	4. test in FreeDOS (*.bat file)

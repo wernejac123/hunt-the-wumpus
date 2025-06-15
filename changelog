@@ -1,0 +1,23 @@
+01/24/25
+	-rename c file to indicate version
+	-created makefile to install wumpus binary to /usr/bin
+
+01/25/25
+	-change makefile to remove wumpus in current directory && strip binary in /usr/bin
+
+03/20/25
+	-change install path in Makefile to /usr/local/bin
+	-add -Wall -Werror -Wextra in Makefile
+	-remove unused i variable in shoot() at line 135
+
+3/25/25
+	changed Makefile to 'gcc -g -Wall -Werror -Wextra wumpus.c -o wumpus'
+
+6/14/25
+	fixed error in placing itmes in rooms randomly
+	use fisher-yates algorithm to generate random numbers
+	reaorganize functions and variables	
+	added status enumereration
+	added debug function
+	removed Makefile
+	wrote shell scrip to build and strip binary
