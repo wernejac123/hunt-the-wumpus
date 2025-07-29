@@ -260,13 +260,15 @@ int main(){
                 //print warnings
                 warnings();
 
-                //shoot or move
-                printf("Shoot or move (s-m)\n");
+                //shoot, move, or quit
+                printf("Shoot, move, or quit (s-m-q)\n");
                 fgets(input, sizeof(input), stdin);
 		if(strcmp(input, "s\n") == 0)
                         shoot();
 		else if(strcmp(input, "m\n") == 0)
                         move();
+		else if(strcmp(input, "q\n")== 0)
+			exit(EXIT_SUCCESS);
                 else{
                 	printf("Invalid option\n");
                        	continue;

@@ -15,3 +15,5 @@
 		bats (bat1, bat2)
 		move (valid/invalid)
 	4. test in FreeDOS (*.bat file)
+7/29/25 
+	tested input for s-m-q (shoot, move, quit)  (both valid and invalid input)

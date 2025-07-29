@@ -21,3 +21,9 @@
 	added debug function
 	removed Makefile
 	wrote shell scrip to build and strip binary
+
+7/29/25
+	add quit option (q) to allow DOS users to exit program 
+	fix bash script 
+        edit README.txt
+        edit tests

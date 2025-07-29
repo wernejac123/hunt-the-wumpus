@@ -2,22 +2,27 @@ Description:
 	my port of Hunt the Wumpus to c for Linux and FreeDOS
 
 Linux:
-	run build.sh to compile c code
+	run build.sh to compile c code (C99 standard). This shell script 
+        only compiles it and not install. I usually put it under /usr/local.
 FreeDOS:
 	included under freedos folder is the wumpDos.img floppy image
-	1) write wumpDoS.img to floppy (use Linux (cat or dd to floppy drive) or FreeDOS (rawrite to floppy drive) for this)  
-	2) boot with floppy in drive
-	3) copy .zip & .bat files to C:\devel\watcom
-	4) make directory C:\devel\watcom\wumpus
-	5) move .zip and .bat files into C:\devel\watcom\wumpus
-	4) unzip zip file
-	5) set environment run C:\devel\watcomc\owsetenv.bat
-	6) run C:\devel\watcom\wumpus\compile.bat to compile
-	7) delete .obj files
-	8) copy fisher_y.exe wumpus.exe
-	9) delete fisher_y.exe
-	10) copy wumpus.exe C:\freedos\bin
-	11) delete *.zip file
+	1) write wumpDoS.img to floppy (diskcopy, rawwrite, etc) 
+	2) insert floppy in drive 
+	3) set envirnment for c/c++ with:
+	   C:\DEVEL\WATCOMC\OWSETENV.BAT
+        4) copy contents of floppy to c drive (I put it under C:\SRC\C\WUMPUS 
+        5) WCC -ZA99 FISHER_YATES.C
+	   WCC -ZA99 MAIN.C
+           WCL -ZA99 *.OBJ
+           DEL *.OBJ
+           
+	      NOTE: On my FreeDOS setup fisher_yates.h & fisher_yates.c 
+	      show up as FISHER~1.C & FISHER~1.H. The compile can't find 
+              fisher_yates.h so I edit MAIN.C & FISHER~1.C and change the 
+              line #include "fisher_yates.h" to #include "fisher~1.h"
 
-	game is now installed
-	leave source code in C:\devel\watcomc
+        6) rename executable (*.EXE) to WUMP.EXE
+        7) create directory C:\GAMES\WUMP if it doesn't exist yet & 
+           copy contents of wumpus directory to C:\GAMES\WUMP 
+           (something like XCOPY C:\SRC\C\HUNT-THE-WUMPUS C:\GAMES\WUMP /S
+            and select Directory when it asks what WUMP is).
